@@ -50,8 +50,6 @@ struct flowstats {
 	unsigned long long fs_maxlat;	/* max flowop latency (nanoseconds) */
 	unsigned long long fs_minlat; /* min flowop latency (nanoseconds) */
 	
-	unsigned long long lat_log[45000];
-	int		   lat_idx;
 	/* These two fields are used only in globalstats variable
 	 * to note the total time of statistics collection: from
 	 * stats_clear() to stats_snap() */

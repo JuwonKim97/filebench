@@ -222,20 +222,6 @@ stats_snap(void)
 	filebench_log(LOG_INFO, "%s", str);
 	free(str);
 
-	/* log all latencies per operation */
-	flowop = filebench_shm->shm_flowoplist;
-	filebench_log(LOG_INFO, "[JW] Latencies!!");
-	while (flowop) {
-		unsigned long long *lat_log;
-		lat_log = flowop->fo_stats.lat_log;
-		for (int i=0; i < flowop->fo_stats.lat_idx; i ++){
-			filebench_log(LOG_INFO,
-					"%s %d: %llu",
-					&flowop->fo_name, i, lat_log[i]);
-		}
-		flowop = flowop->fo_next;
-	}
-
 	filebench_log(LOG_INFO,
 	    "IO Summary: %5d ops %5.3lf ops/s %0.0lf/%0.0lf rd/wr "
 	    "%5.1lfmb/s %5.1fms/op",

@@ -171,15 +171,9 @@ void
 flowop_endop(threadflow_t *threadflow, flowop_t *flowop, int64_t bytes)
 {
 	unsigned long long ll_delay;
-        unsigned long long *lat_log;
-	lat_log = flowop->fo_stats.lat_log;
 
 	ll_delay = (gethrtime() - threadflow->tf_stime);
 
-
-        if (!filebench_shm->shm_bequiet) {
-		lat_log[(flowop->fo_stats.lat_idx)++] = ll_delay;   
-	}
 
 	/* setting minimum and maximum latencies for this flowop */
 	if (!flowop->fo_stats.fs_minlat || ll_delay < flowop->fo_stats.fs_minlat)
