@@ -24,20 +24,15 @@
 #
 
 set $dir=/mnt
-#set $nfiles=58880 #50%
-#set $nfiles=70656 #60%
-set $nfiles=82432 #70%
-#set $nfiles=94208 #80%
-#set $nfiles=105984 #90%
+#set $nfiles=10000
+set $nfiles=82432
 set $meandirwidth=20
-
-set $filesize=cvar(type=cvar-gamma,parameters=mean:2097152;gamma:1.5) #for real 70% of 230GB partition. 161GB
-
 # set $filesize=cvar(type=cvar-gamma,parameters=mean:131072;gamma:1.5)
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:11875000;gamma:1.#5) #93GB
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:28014951;gamma:1.5) #for 90% of 230GB partition
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:25014951;gamma:1.5) #for 80% of 230GB partition
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:22014951;gamma:1.5) #for 70% of 230GB partition
+set $filesize=cvar(type=cvar-gamma,parameters=mean:2097152;gamma:1.5) #for real 70% of 230GB partition. 161GB
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:19014951;gamma:1.5) #for 60% of 230GB partition
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:16014951;gamma:1.5) #for 50% of 230GB partition
 #set $filesize=cvar(type=cvar-gamma,parameters=mean:2968750;gamma:1.5) #for 88% of 30GB partition
@@ -50,7 +45,7 @@ set $meanappendsize=16k
 #set $runtime=200
 #set $runtime=10
 #set $runtime=600
-set $runtime=1200
+set $runtime=1600
 #set $runtime=300
 
 define fileset name=bigfileset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=80

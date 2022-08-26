@@ -1348,7 +1348,7 @@ fileset_populate_file(fileset_t *fileset, filesetentry_t *parent, int serial)
 	entry->fse_fileset = fileset;
 	fileset_insfilelist(fileset, entry);
 
-	(void) snprintf(tmpname, sizeof (tmpname), "%08d", serial);
+	(void) snprintf(tmpname, sizeof (tmpname), "%08d.jpg", serial);
 	if ((entry->fse_path = (char *)ipc_pathalloc(tmpname)) == NULL) {
 		filebench_log(LOG_ERROR,
 		    "fileset_populate_file: Can't alloc path string");
